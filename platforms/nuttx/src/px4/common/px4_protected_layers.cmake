@@ -6,8 +6,11 @@ add_library(px4_layer
 	board_fat_dma_alloc.c
 	tasks.cpp
 	console_buffer_usr.cpp
+<<<<<<< HEAD
 	usr_mcu_version.cpp
 	cdc_acm_check.cpp
+=======
+>>>>>>> Parameter to always start on USB (#22234)
 	${PX4_SOURCE_DIR}/platforms/posix/src/px4/common/print_load.cpp
 	${PX4_SOURCE_DIR}/platforms/posix/src/px4/common/cpuload.cpp
 	usr_hrt.cpp

@@ -2,7 +2,12 @@
 
 add_library(px4_layer
 		${KERNEL_SRCS}
+<<<<<<< HEAD
 		cdc_acm_check.cpp
+=======
+		${PX4_SOURCE_DIR}/platforms/common/Serial.cpp
+		SerialImpl.cpp
+>>>>>>> Parameter to always start on USB (#22234)
 	)
 
 target_link_libraries(px4_layer
