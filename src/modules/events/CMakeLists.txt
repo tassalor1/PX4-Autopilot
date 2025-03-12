@@ -36,6 +36,7 @@ px4_add_module(
 	MAIN send_event
 	COMPILE_FLAGS
 	SRCS
+		events.cpp
 		rc_loss_alarm.cpp
 		send_event.cpp
 		set_leds.cpp

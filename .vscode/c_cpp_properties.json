@@ -3,13 +3,21 @@
         {
             "name": "PX4",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/home/tassalor/PX4-v1.13/PX4-Autopilot/boards/px4/fmu-v6c/src",
+                "/home/tassalor/PX4-v1.13/PX4-Autopilot/platforms/nuttx/src/px4/stm/stm32h7/include",
+                "/home/tassalor/PX4-v1.13/PX4-Autopilot/platforms/nuttx/NuttX/nuttx/include/"
             ],
             "defines": [],
             "macFrameworkPath": [],
             "configurationProvider": "ms-vscode.cmake-tools",
             "cppStandard": "c++14",
-            "cStandard": "c11"
+            "cStandard": "c11",
+            "dotConfig": "/home/tassalor/PX4-v1.13/PX4-Autopilot/build/px4_fmu-v6c_rtps/NuttX/nuttx/.config",
+            "forcedInclude": [
+                 "/home/tassalor/PX4-v1.13/PX4-Autopilot/build/px4_fmu-v6c_rtps/px4_boardconfig.h",
+                 "/home/tassalor/PX4-v1.13/PX4-Autopilot/platforms/common/include/px4_platform_common/defines.h"
+                 ]
         }
     ],
     "version": 4

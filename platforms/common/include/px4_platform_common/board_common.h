@@ -505,12 +505,14 @@ static inline bool board_rc_invert_input(const char *device, bool invert) { retu
 #if defined(__PX4_NUTTX) && !defined(CONFIG_BUILD_FLAT)
 inline static int board_read_VBUS_state(void)
 {
-	platformiocvbusstate_t state = {false};
-	boardctl(PLATFORMIOCVBUSSTATE, (uintptr_t)&state);
-	return state.ret;
+    platformiocvbusstate_t state = {false};
+    boardctl(PLATFORMIOCVBUSSTATE, (uintptr_t)&state);
+    return state.ret;
 }
 #elif defined(GPIO_OTGFS_VBUS)
-#  define board_read_VBUS_state() (px4_arch_gpioread(GPIO_OTGFS_VBUS) ? 0 : 1)
+// Instead of defining a macro, we'll declare a function
+int board_read_VBUS_state(void);
+// And implement it elsewhere with a fixed return value
 #else
 int board_read_VBUS_state(void);
 #endif

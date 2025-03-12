@@ -44,6 +44,7 @@ extern int serdis_main(int c, char **argv);
 __END_DECLS
 
 #include <px4_platform_common/shutdown.h>
+#include <px4_platform_common/board_common.h>
 
 #define USB_DEVICE_PATH "/dev/ttyACM0"
 
@@ -386,7 +387,7 @@ bool CdcAcmAutostart::scan_buffer_for_mavlink_reboot()
 			if (param1 == 1) {
 				// 1: Reboot autopilot
 				rebooting = true;
-				px4_reboot_request(REBOOT_REQUEST, 0);
+				px4_reboot_request(true, 0);
 
 			} else if (param1 == 2) {
 				// 2: Shutdown autopilot
@@ -398,7 +399,7 @@ bool CdcAcmAutostart::scan_buffer_for_mavlink_reboot()
 			} else if (param1 == 3) {
 				// 3: Reboot autopilot and keep it in the bootloader until upgraded.
 				rebooting = true;
-				px4_reboot_request(REBOOT_TO_BOOTLOADER, 0);
+				px4_reboot_request(true, 0);
 			}
 		}
 	}
